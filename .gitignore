@@ -1,0 +1,8 @@
+# ignore everything
+*
+# whitelist all directories
+!.gitignore
+!*/
+!*.v
+!*.xise
+netgen/
