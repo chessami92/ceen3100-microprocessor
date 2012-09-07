@@ -16,23 +16,23 @@ module RegisterFile(
     );
 	
 	input [4:0] readRegister1, readRegister2, writeRegister;
-	input writeData, regWrite, clk;
+	input [31:0] writeData;
+	input regWrite, clk;
 	output [31:0] readData1, readData2;
 	
 	reg [31:0] readData1, readData2;
 	
 	reg [31:0] registers[31:0];
 	
-	always begin 
-		readData1 <= registers[readRegister1];
-		readData2 <= registers[readRegister2];
-	end
-	
-	
 	always @(posedge clk) begin
 		if(regWrite == 1'b1) begin
 			registers[writeRegister] <= writeData;
 		end
+	end
+	
+	always @(negedge clk) begin
+		readData1 <= registers[readRegister1];
+		readData2 <= registers[readRegister2];
 	end
 	
 endmodule
