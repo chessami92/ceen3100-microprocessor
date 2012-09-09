@@ -20,7 +20,7 @@ module RegisterFile(
 	input regWrite, clk;
 	output [31:0] readData1, readData2;
 	
-	reg [31:0] readData1, readData2;
+	wire [31:0] readData1, readData2;
 	
 	reg [31:0] registers[31:0];
 	
@@ -30,9 +30,7 @@ module RegisterFile(
 		end
 	end
 	
-	always @(negedge clk) begin
-		readData1 <= registers[readRegister1];
-		readData2 <= registers[readRegister2];
-	end
+	assign readData1 = registers[readRegister1];
+	assign readData2 = registers[readRegister2];
 	
 endmodule

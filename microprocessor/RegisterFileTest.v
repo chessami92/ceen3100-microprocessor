@@ -62,15 +62,24 @@ module RegisterFileTest;
 			#10;
 		end
 		
-		writeRegister=0;
-		writeData=0;
 		regWrite=0;
 		
 		for (i = 0; i< 32; i = i + 1) begin
 			readRegister1=i;
 			readRegister2=(31-i);
-			#10;
+			#5;
 		end
+		
+		writeRegister=0;
+		writeData=32'hFF;
+		regWrite=1;
+		#10;
+		
+		writeRegister=31;
+		writeData=32'hFF;
+		#10;
+		
+		regWrite=0;
 	end
 	
 	always begin
