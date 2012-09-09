@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Joshua/Google Drive/CEEN 3100/microprocessor/microprocessor/ControlTest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="ControlTest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="4" />
+   <wvobject fp_name="/ControlTest/writeBackControl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">writeBackControl[1:0]</obj_property>
+      <obj_property name="ObjectShortName">writeBackControl[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ControlTest/memAccessControl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">memAccessControl[2:0]</obj_property>
+      <obj_property name="ObjectShortName">memAccessControl[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ControlTest/calculationControl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calculationControl[3:0]</obj_property>
+      <obj_property name="ObjectShortName">calculationControl[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ControlTest/opCode" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">opCode[5:0]</obj_property>
+      <obj_property name="ObjectShortName">opCode[5:0]</obj_property>
+   </wvobject>
+</wave_config>
