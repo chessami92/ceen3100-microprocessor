@@ -34,10 +34,10 @@ module MultiplexerTest;
 
 	// Instantiate the Unit Under Test (UUT)
 	Multiplexer uut (
-		.in0(in0), 
-		.in1(in1), 
-		.select(select), 
-		.out(out)
+		.in0,
+		.in1,
+		.select,
+		.out
 	);
 	
 	defparam uut.inputWidth=8;	

@@ -34,10 +34,10 @@ module ControlTest;
 
 	// Instantiate the Unit Under Test (UUT)
 	Control uut (
-		.opCode(opCode), 
-		.writeBackControl(writeBackControl), 
-		.memAccessControl(memAccessControl), 
-		.calculationControl(calculationControl)
+		.opCode,
+		.writeBackControl, 
+		.memAccessControl, 
+		.calculationControl
 	);
 
 	initial begin
@@ -46,6 +46,6 @@ module ControlTest;
 		#5 opCode = 2;
 		#5 opCode = 3;
 	end
-      
+	
 endmodule
 

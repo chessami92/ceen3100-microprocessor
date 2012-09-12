@@ -38,14 +38,14 @@ module RegisterFileTest;
 
 	// Instantiate the Unit Under Test (UUT)
 	RegisterFile uut (
-		.readRegister1(readRegister1), 
-		.readRegister2(readRegister2), 
-		.writeRegister(writeRegister), 
-		.writeData(writeData), 
-		.regWrite(regWrite), 
-		.clk(clk), 
-		.readData1(readData1),
-		.readData2(readData2)
+		.readRegister1, 
+		.readRegister2, 
+		.writeRegister, 
+		.writeData, 
+		.regWrite, 
+		.clk, 
+		.readData1,
+		.readData2
 	);
 
 	integer i; 

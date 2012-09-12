@@ -27,10 +27,7 @@ module InstructionDecode(
 	 output reg [4:0] writeRegister1
     );
 	
-	wire [31:0] readData1Temp, readData2Temp, signExtendedImmediateValue;
-	wire [1:0] writeBackControlTemp;
-	wire [2:0] memAccessControlTemp;
-	wire [3:0] calculationControlTemp;
+	wire signExtendedImmediateValue;
 	
 	RegisterFile registerFile (
 		.readRegister1(instruction[25:21]), 
@@ -38,27 +35,22 @@ module InstructionDecode(
 		.writeRegister(writeRegister), 
 		.writeData(writeData), 
 		.regWrite(regWrite), 
-		.clk(clk), 
-		.readData1(readData1Temp),
-		.readData2(readData2Temp)
+		.clk(clk)
 	);
 	
 	Control control (
-		.opCode(instruction[31:26]), 
-		.writeBackControl(writeBackControlTemp), 
-		.memAccessControl(memAccessControlTemp), 
-		.calculationControl(calculationControlTemp)
+		.opCode(instruction[31:26])
 	);
 	
 	assign signExtendedImmediateValue =  {{15{instruction[15]}}, instruction[15:0]};
 	
-	always @(posedge clk) begin
-			writeBackControl <= writeBackControlTemp;
-			memAccessControl <= memAccessControlTemp;
-			calculationControl <= calculationControlTemp;
+	always @(negedge clk) begin
+			writeBackControl <= control.writeBackControl;
+			memAccessControl <= control.memAccessControl;
+			calculationControl <= control.calculationControl;
 			programCounterOut <= programCounterIn;
-			readData1 <= readData1Temp;
-			readData2 <= readData2Temp;
+			readData1 <= registerFile.readData1;
+			readData2 <= registerFile.readData2;
 			immediateOperand <= signExtendedImmediateValue;
 			writeRegister0 <= instruction[20:16];
 			writeRegister1 <= instruction[15:11];
