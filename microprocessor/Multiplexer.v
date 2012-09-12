@@ -19,15 +19,26 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Multiplexer(
-    in0, in1, select,
-	 out
-    );
+	 inputBus, select,
+	 out);
 	
 	parameter inputWidth = 0;
+	parameter numInputs = 0;
+	parameter selectLines = 0;
+
+	input [(inputWidth*numInputs)-1:0] inputBus;
+	input [selectLines-1:0] select;
+	output [inputWidth-1:0] out;
 	
-	input [inputWidth-1:0] in0, in1;
-	input select;
-	output wire [inputWidth-1:0] out;
+	wire [inputWidth-1:0] inputArray [0:numInputs-1];
 	
-	assign out = select ? in1: in0;
+	assign out = inputArray[select];
+
+	genvar i;
+	generate
+		 for(i = 0; i < numInputs; i = i + 1) begin: inputArrayAssignment
+			  assign  inputArray[i] = inputBus[(i*inputWidth)+:inputWidth];
+		 end
+	endgenerate
+	
 endmodule

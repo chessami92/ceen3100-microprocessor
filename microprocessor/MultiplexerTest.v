@@ -25,29 +25,33 @@
 module MultiplexerTest;
 
 	// Inputs
-	reg [7:0] in0;
-	reg [7:0] in1;
-	reg select;
+	reg [15:0] inputBus;
+	reg [1:0]select;
 
 	// Outputs
-	wire [7:0] out;
+	wire [3:0] out;
 
 	// Instantiate the Unit Under Test (UUT)
 	Multiplexer uut (
-		.in0,
-		.in1,
+		.inputBus,
 		.select,
 		.out
 	);
 	
-	defparam uut.inputWidth=8;	
+	defparam uut.inputWidth=4;
+	defparam uut.numInputs=4;
+	defparam uut.selectLines=2;
 	
 	initial begin
-		in0 = 'hFF;
-		in1 = 0;
+		inputBus = 16'h3210;
 		select = 0;
 		#5 select = 1;
-		#5 in1 = 'hAA;
+		#5 select = 2;
+		#5 select = 3;
+		#5 inputBus = 16'h0123;
+		#5 select = 2;
+		#5 select = 1;
+		#5 select = 0;
 	end
       
 endmodule

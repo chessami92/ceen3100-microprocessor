@@ -10,21 +10,20 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="4" />
+   <WVObjectSize size="3" />
    <wvobject fp_name="/MultiplexerTest/out" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">out[7:0]</obj_property>
-      <obj_property name="ObjectShortName">out[7:0]</obj_property>
+      <obj_property name="ElementShortName">out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">out[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MultiplexerTest/in0" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">in0[7:0]</obj_property>
-      <obj_property name="ObjectShortName">in0[7:0]</obj_property>
+   <wvobject fp_name="/MultiplexerTest/inputBus" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inputBus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">inputBus[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MultiplexerTest/in1" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">in1[7:0]</obj_property>
-      <obj_property name="ObjectShortName">in1[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/MultiplexerTest/select" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">select</obj_property>
-      <obj_property name="ObjectShortName">select</obj_property>
+   <wvobject fp_name="/MultiplexerTest/select" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">select[1:0]</obj_property>
+      <obj_property name="ObjectShortName">select[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>
