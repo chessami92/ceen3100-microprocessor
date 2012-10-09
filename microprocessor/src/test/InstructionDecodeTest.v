@@ -1,9 +1,6 @@
 `timescale 1ns / 1ps
 
 ////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
 // Create Date:   23:06:50 09/11/2012
 // Design Name:   InstructionDecode
 // Module Name:   C:/Users/Joshua/Google Drive/CEEN 3100/microprocessor/microprocessor/InstructioDecodeTest.v
@@ -16,13 +13,9 @@
 //
 // Dependencies:
 // 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
 ////////////////////////////////////////////////////////////////////////////////
 
-module InstructioDecodeTest;
+module InstructionDecodeTest;
 
 	// Inputs
 	reg [31:0] programCounterIn;
@@ -40,8 +33,10 @@ module InstructioDecodeTest;
 	wire [31:0] readData1;
 	wire [31:0] readData2;
 	wire [31:0] immediateOperand;
-	wire [4:0] writeRegister0;
-	wire [4:0] writeRegister1;
+	wire [4:0] rt;
+	wire [4:0] rd;
+	wire pcWrite;
+	wire ifIdWrite;
 
 	// Instantiate the Unit Under Test (UUT)
 	InstructionDecode uut (
@@ -58,8 +53,10 @@ module InstructioDecodeTest;
 		.readData1, 
 		.readData2, 
 		.immediateOperand, 
-		.writeRegister0, 
-		.writeRegister1
+		.rt, 
+		.rd, 
+		.pcWrite, 
+		.ifIdWrite
 	);
 
 	initial begin

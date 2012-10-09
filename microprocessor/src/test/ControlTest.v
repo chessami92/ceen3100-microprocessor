@@ -1,9 +1,6 @@
 `timescale 1ns / 1ps
 
 ////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
 // Create Date:   16:57:11 09/09/2012
 // Design Name:   Control
 // Module Name:   C:/Users/Joshua/Google Drive/CEEN 3100/microprocessor/microprocessor/ControlTest.v
@@ -15,10 +12,6 @@
 // Verilog Test Fixture created by ISE for module: Control
 //
 // Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
 // 
 ////////////////////////////////////////////////////////////////////////////////
 

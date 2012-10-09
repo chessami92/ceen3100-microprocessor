@@ -37,14 +37,19 @@ module Control(
 				regDst = 0; aluOp1 = 0; aluOp0 = 0; aluSrc = 1;
 			end
 			'b000010 : begin //Store Word
-				regWrite = 0; 
+				regWrite = 0; memToReg = 1'bx;
 				branch = 0; memRead = 0; memWrite = 1;
-				aluOp1 = 0; aluOp0 = 0; aluSrc = 1;
+				regDst = 1'bx; aluOp1 = 0; aluOp0 = 0; aluSrc = 1;
 			end
 			'b000011 : begin //Branch if Equal
-				regWrite = 0; 
+				regWrite = 0; memToReg = 1'bx;
 				branch = 1; memRead = 0; memWrite = 0; 
-				aluOp1 = 0; aluOp0 = 1; aluSrc = 0; 
+				regDst = 1'bx; aluOp1 = 0; aluOp0 = 1; aluSrc = 0; 
+			end
+			default : begin
+				regWrite = 1'bx; memToReg = 1'bx;
+				branch = 1'bx; memRead = 1'bx; memWrite = 1'bx; 
+				regDst = 1'bx; aluOp1 = 1'bx; aluOp0 = 1'bx; aluSrc = 1'bx; 
 			end
 		endcase
 	end
