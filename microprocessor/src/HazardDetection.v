@@ -18,7 +18,13 @@ module HazardDetection(
     output reg ifIdWrite,
     output reg bubbleInstruction
     );
-
+	
+	initial begin
+		pcWrite = 0;
+		ifIdWrite = 0;
+		bubbleInstruction = 0;
+	end
+	
 	always @(idExMemRead or idExRt or ifIdRs or ifIdRt) begin
 		if(idExMemRead == 1'b1 & (idExRt == ifIdRs | idExRt == ifIdRt)) begin
 			pcWrite = 0;

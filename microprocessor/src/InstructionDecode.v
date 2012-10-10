@@ -67,6 +67,18 @@ module InstructionDecode(
 		.bubbleInstruction(bubbleInstruction)
 	);
 	
+	initial begin
+		writeBackControl = 2'b0;
+		memAccessControl = 3'b0;
+		calculationControl = 4'b0;
+		programCounterOut = 32'b0;
+		readData1 = 32'b0;
+		readData2 = 32'b0;
+		immediateOperand = 32'b0;
+		rt = 5'b0;
+		rd = 5'b0;
+	end
+	
 	always @(negedge clk) begin
 			if(hazardDetection.bubbleInstruction == 1) begin
 				writeBackControl <= 2'b0;
