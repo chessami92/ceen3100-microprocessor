@@ -32,6 +32,10 @@ module InstructionDecode(
 	wire signExtendedImmediateValue;
 	wire [5:0] currentOpCode;
 	wire [4:0] currentRs, currentRt, currentRd;
+	wire [31:0] readData1Buffer, readData2Buffer;
+	wire [1:0] writeBackControlBuffer;
+	wire [2:0] memAccessControlBuffer;
+	wire [3:0] calculationControlBuffer;
 	
 	assign signExtendedImmediateValue = {{16{instruction[15]}}, instruction[15:0]};
 	assign currentOpCode = instruction[31:26];
