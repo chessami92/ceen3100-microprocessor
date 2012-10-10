@@ -22,13 +22,6 @@ module RegisterFile(
 
 	reg [31:0] registers[31:0];
 	
-	integer i;
-	
-	initial begin
-		for(i = 0; i < 31; i = i + 1)
-			registers[i] = 32'b0;
-	end
-	
 	always @(posedge clk) begin
 		if(regWrite == 1'b1) begin
 			registers[writeRegister] <= writeData;
