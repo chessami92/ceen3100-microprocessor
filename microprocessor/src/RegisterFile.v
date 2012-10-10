@@ -10,18 +10,16 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module RegisterFile(
-    readRegister1, readRegister2, writeRegister,
-    writeData, regWrite, clk,
-    readData1, readData2
+    input [4:0] readRegister1, 
+	 input [4:0] readRegister2, 
+	 input [4:0] writeRegister,
+    input [31:0] writeData, 
+	 input regWrite, 
+	 input clk,
+    output wire [31:0] readData1, 
+    output wire [31:0] readData2
     );
-	
-	input [4:0] readRegister1, readRegister2, writeRegister;
-	input [31:0] writeData;
-	input regWrite, clk;
-	output [31:0] readData1, readData2;
-	
-	wire [31:0] readData1, readData2;
-	
+
 	reg [31:0] registers[31:0];
 	
 	always @(posedge clk) begin
