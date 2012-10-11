@@ -6,7 +6,7 @@
 // Project Name: 		microprocessor
 // Description: 		
 //
-// Dependencies: 		RegisterFile, Control
+// Dependencies: 		RegisterFile.v, Control.v, HazardDetection.v
 //
 //////////////////////////////////////////////////////////////////////////////////
 module InstructionDecode(
@@ -23,6 +23,7 @@ module InstructionDecode(
 	 output reg [31:0] readData1,
 	 output reg [31:0] readData2,
 	 output reg [31:0] immediateOperand,
+	 output reg [4:0] rs,
     output reg [4:0] rt,
 	 output reg [4:0] rd,
 	 output wire pcWrite,
@@ -79,6 +80,7 @@ module InstructionDecode(
 		readData1 = 32'b0;
 		readData2 = 32'b0;
 		immediateOperand = 32'b0;
+		rs = 5'b0;
 		rt = 5'b0;
 		rd = 5'b0;
 	end
@@ -101,6 +103,7 @@ module InstructionDecode(
 			readData2 <= readData2Buffer;
 			
 			immediateOperand <= signExtendedImmediateValue;
+			rs <= currentRs;
 			rt <= currentRt;
 			rd <= currentRd;
 	end
