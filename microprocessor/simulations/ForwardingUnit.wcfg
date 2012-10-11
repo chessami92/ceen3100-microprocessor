@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Joshua/Google Drive/CEEN 3100/microprocessor/microprocessor/ForwardingUnitTest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="ForwardingUnitTest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/ForwardingUnitTest/operand1Control" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">operand1Control[1:0]</obj_property>
+      <obj_property name="ObjectShortName">operand1Control[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ForwardingUnitTest/operand2Control" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">operand2Control[1:0]</obj_property>
+      <obj_property name="ObjectShortName">operand2Control[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ForwardingUnitTest/idExRs" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">idExRs[4:0]</obj_property>
+      <obj_property name="ObjectShortName">idExRs[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ForwardingUnitTest/idExRt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">idExRt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">idExRt[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ForwardingUnitTest/exMemRd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">exMemRd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">exMemRd[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ForwardingUnitTest/exMemRegWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">exMemRegWrite</obj_property>
+      <obj_property name="ObjectShortName">exMemRegWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ForwardingUnitTest/memWbRd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">memWbRd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">memWbRd[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ForwardingUnitTest/memWbRegWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">memWbRegWrite</obj_property>
+      <obj_property name="ObjectShortName">memWbRegWrite</obj_property>
+   </wvobject>
+</wave_config>

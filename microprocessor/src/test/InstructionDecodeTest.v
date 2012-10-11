@@ -33,6 +33,7 @@ module InstructionDecodeTest;
 	wire [31:0] readData1;
 	wire [31:0] readData2;
 	wire [31:0] immediateOperand;
+	wire [4:0] rs;
 	wire [4:0] rt;
 	wire [4:0] rd;
 	wire pcWrite;
@@ -53,6 +54,7 @@ module InstructionDecodeTest;
 		.readData1, 
 		.readData2, 
 		.immediateOperand, 
+		.rs,
 		.rt, 
 		.rd, 
 		.pcWrite, 
