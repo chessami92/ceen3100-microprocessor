@@ -3,19 +3,12 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    22:18:19 10/09/2012 
+// Create Date:    	22:18:19 10/09/2012 
 // Design Name: 
-// Module Name:    Microprocessor 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
+// Module Name:    	Microprocessor 
+// Project Name: 		microprocessor
 //
 // Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Microprocessor(
@@ -28,10 +21,17 @@ module Microprocessor(
 	
 	//Buffered signals
 	wire [31:0] ifIdProgramCounter, ifIdInstruction;
-	wire [1:0] ifIdWriteBackControl;
-	wire [2:0] ifIdMemAccessControl;
-	wire [3:0] ifIdCalculationControl;
+	
+	wire [1:0] idExWriteBackControl;
+	wire [2:0] idExMemAccessControl;
+	wire [3:0] idExCalculationControl;
 	wire [31:0] idExProgramCounter, idExReadData1, idExReadData2, idExImmediateOperand;
+	wire [4:0] idExRs, idExRt, idExRd;
+	
+	wire [1:0] exMemWriteBackControl;
+	wire [2:0] exMemMemAccessControl;
+	wire [31:0] exMemResult, exMemWriteData;
+	wire [4:0] exMemRd;
 	
 	assign led = idExReadData1[7:0];
 	
@@ -46,21 +46,43 @@ module Microprocessor(
 	InstructionDecode instructionDecode (
 		.programCounterIn(ifIdProgramCounter), 
 		.instruction(ifIdInstruction), 
-		.writeRegister(), 
-		.writeData(), 
-		.regWrite(), 
+		//.writeRegister(), 
+		//.writeData(), 
+		//.regWrite(), 
 		.clk(clk), 
-		.writeBackControl(ifIdWriteBackControl), 
-		.memAccessControl(ifIdMemAccessControl), 
-		.calculationControl(ifIdCalculationControl), 
+		.writeBackControl(idExWriteBackControl), 
+		.memAccessControl(idExMemAccessControl), 
+		.calculationControl(idExCalculationControl), 
 		.programCounterOut(idExProgramCounter), 
 		.readData1(idExReadData1), 
 		.readData2(idExReadData2), 
 		.immediateOperand(idExImmediateOperand), 
-		.rt(), 
-		.rd(), 
+		.rs(idExRs),
+		.rt(idExRt), 
+		.rd(idExRd), 
 		.pcWrite(pcWrite), 
 		.ifIdWrite(ifIdWrite)
+	);
+	
+	Execute execute (
+		.writeBackControlIn(idExWriteBackControl), 
+		.memAccessControlIn(idExMemAccessControl), 
+		.calculationControl(idExCalculationControl), 
+		.readData1(idExReadData1), 
+		.readData2(idExReadData2), 
+		.immediateOperand(idExImmediateOperand), 
+		.rs(idExRs), 
+		.rt(idExRt), 
+		.rdIn(idExRd), 
+		//.memWbRegWrite(), 
+		//.memWbRd(), 
+		//.memWbData(), 
+		.clk(clk), 
+		.writeBackControlOut(exMemWriteBackControl), 
+		.memAccessControlOut(exMemMemAccessControl), 
+		.result(exMemResult), 
+		.writeData(exMemWriteData), 
+		.rdOut(exMemRd)
 	);
 
 endmodule

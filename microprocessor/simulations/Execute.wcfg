@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Joshua/Google Drive/CEEN 3100/microprocessor/microprocessor/ExecuteTest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="ExecuteTest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="23" />
+   <wvobject fp_name="/ExecuteTest/writeBackControlOut" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">writeBackControlOut[1:0]</obj_property>
+      <obj_property name="ObjectShortName">writeBackControlOut[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/memAccessControlOut" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">memAccessControlOut[2:0]</obj_property>
+      <obj_property name="ObjectShortName">memAccessControlOut[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/result" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/writeData" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">writeData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">writeData[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/rdOut" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rdOut[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rdOut[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/writeBackControlIn" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">writeBackControlIn[1:0]</obj_property>
+      <obj_property name="ObjectShortName">writeBackControlIn[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/memAccessControlIn" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">memAccessControlIn[2:0]</obj_property>
+      <obj_property name="ObjectShortName">memAccessControlIn[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/calculationControl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calculationControl[3:0]</obj_property>
+      <obj_property name="ObjectShortName">calculationControl[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/readData1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">readData1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">readData1[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/readData2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">readData2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">readData2[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/immediateOperand" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">immediateOperand[31:0]</obj_property>
+      <obj_property name="ObjectShortName">immediateOperand[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/rs" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rs[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/rt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/rdIn" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rdIn[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rdIn[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/memWbRegWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">memWbRegWrite</obj_property>
+      <obj_property name="ObjectShortName">memWbRegWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/memWbRd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">memWbRd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">memWbRd[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/memWbData" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">memWbData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memWbData[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/ADD" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ADD[5:0]</obj_property>
+      <obj_property name="ObjectShortName">ADD[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/SUB" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">SUB[5:0]</obj_property>
+      <obj_property name="ObjectShortName">SUB[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/AND" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">AND[5:0]</obj_property>
+      <obj_property name="ObjectShortName">AND[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/OR" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">OR[5:0]</obj_property>
+      <obj_property name="ObjectShortName">OR[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ExecuteTest/XOR" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">XOR[5:0]</obj_property>
+      <obj_property name="ObjectShortName">XOR[5:0]</obj_property>
+   </wvobject>
+</wave_config>
