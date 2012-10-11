@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Joshua/Google Drive/CEEN 3100/microprocessor/microprocessor/InstructionDecodeTest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="InstructionDecodeTest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/InstructionDecodeTest/writeBackControl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">writeBackControl[1:0]</obj_property>
+      <obj_property name="ObjectShortName">writeBackControl[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/memAccessControl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">memAccessControl[2:0]</obj_property>
+      <obj_property name="ObjectShortName">memAccessControl[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/calculationControl" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calculationControl[3:0]</obj_property>
+      <obj_property name="ObjectShortName">calculationControl[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/programCounterOut" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">programCounterOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">programCounterOut[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/readData1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">readData1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">readData1[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/readData2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">readData2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">readData2[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/immediateOperand" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">immediateOperand[31:0]</obj_property>
+      <obj_property name="ObjectShortName">immediateOperand[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/rs" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rs[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/rt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/rd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/pcWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">pcWrite</obj_property>
+      <obj_property name="ObjectShortName">pcWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/ifIdWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ifIdWrite</obj_property>
+      <obj_property name="ObjectShortName">ifIdWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/programCounterIn" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">programCounterIn[31:0]</obj_property>
+      <obj_property name="ObjectShortName">programCounterIn[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/instruction" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/writeRegister" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">writeRegister[4:0]</obj_property>
+      <obj_property name="ObjectShortName">writeRegister[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/writeData" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">writeData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">writeData[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/regWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">regWrite</obj_property>
+      <obj_property name="ObjectShortName">regWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionDecodeTest/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+</wave_config>
