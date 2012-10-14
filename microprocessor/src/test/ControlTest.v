@@ -22,7 +22,7 @@ module ControlTest;
 
 	// Outputs
 	wire [1:0] writeBackControl;
-	wire [2:0] memAccessControl;
+	wire [1:0] memAccessControl;
 	wire [3:0] calculationControl;
 
 	// Instantiate the Unit Under Test (UUT)

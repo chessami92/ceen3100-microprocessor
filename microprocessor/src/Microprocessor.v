@@ -22,18 +22,22 @@ module Microprocessor(
 	//Buffered signals
 	wire [31:0] ifIdProgramCounter, ifIdInstruction;
 	
-	wire [1:0] idExWriteBackControl;
-	wire [2:0] idExMemAccessControl;
+	wire [1:0] idExWriteBackControl, idExMemAccessControl;
 	wire [3:0] idExCalculationControl;
 	wire [31:0] idExProgramCounter, idExReadData1, idExReadData2, idExImmediateOperand;
 	wire [4:0] idExRs, idExRt, idExRd;
 	
-	wire [1:0] exMemWriteBackControl;
-	wire [2:0] exMemMemAccessControl;
+	wire [1:0] exMemWriteBackControl, exMemMemAccessControl;
 	wire [31:0] exMemResult, exMemWriteData;
 	wire [4:0] exMemRd;
 	
+	wire [1:0] memWbWriteBackControl;
+	wire memWbRegWrite;
+	wire [31:0] memWbReadData, memWbResult;
+	wire [4;0] memWbRd;
+	
 	assign led = idExReadData1[7:0];
+	assign memWbRegWrite = memWbWriteBackControl[1];
 	
 	InstructionFetch instructionFetch (
 		.pcWrite(pcWrite), 
@@ -46,9 +50,9 @@ module Microprocessor(
 	InstructionDecode instructionDecode (
 		.programCounterIn(ifIdProgramCounter), 
 		.instruction(ifIdInstruction), 
-		//.writeRegister(), 
+		.writeRegister(memWbRd), 
 		//.writeData(), 
-		//.regWrite(), 
+		.regWrite(memWbRegWrite), 
 		.clk(clk), 
 		.writeBackControl(idExWriteBackControl), 
 		.memAccessControl(idExMemAccessControl), 
@@ -74,8 +78,8 @@ module Microprocessor(
 		.rs(idExRs), 
 		.rt(idExRt), 
 		.rdIn(idExRd), 
-		//.memWbRegWrite(), 
-		//.memWbRd(), 
+		.memWbRegWrite(memWbRegWrite), 
+		.memWbRd(memWbRd), 
 		//.memWbData(), 
 		.clk(clk), 
 		.writeBackControlOut(exMemWriteBackControl), 
@@ -83,6 +87,19 @@ module Microprocessor(
 		.result(exMemResult), 
 		.writeData(exMemWriteData), 
 		.rdOut(exMemRd)
+	);
+	
+	MemoryAccess memoryAccess (
+		.writeBackControlIn(exMemWriteBackControl), 
+		.memAccessControl(exMemMemAccessControl), 
+		.resultIn(exMemResult), 
+		.writeData(exMemWriteData), 
+		.rdIn(exMemRd), 
+		.clk(clk), 
+		.writeBackControlOut(memWbWriteBackControl), 
+		.readData(memWbReadData), 
+		.resultOut(memWbResult), 
+		.rdOut(memWbRd)
 	);
 
 endmodule
