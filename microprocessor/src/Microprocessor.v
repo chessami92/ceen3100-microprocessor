@@ -8,7 +8,9 @@
 // Module Name:    	Microprocessor 
 // Project Name: 		microprocessor
 //
-// Dependencies: 
+// Dependencies: 		InstructionFetch.v, InstructionMemory.v, InstructionDecode.v,
+// RegisterFile.v, Control.v, HazardDetection.v, Execute.v, Alu.v, ForwardingUnit.v,
+// MemoryAccess.v, WriteBack.v
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Microprocessor(
@@ -33,8 +35,8 @@ module Microprocessor(
 	
 	wire [1:0] memWbWriteBackControl;
 	wire memWbRegWrite;
-	wire [31:0] memWbReadData, memWbResult;
-	wire [4;0] memWbRd;
+	wire [31:0] memWbReadData, memWbResult, memWbRegisterData;
+	wire [4:0] memWbRd;
 	
 	assign led = idExReadData1[7:0];
 	assign memWbRegWrite = memWbWriteBackControl[1];
@@ -51,7 +53,7 @@ module Microprocessor(
 		.programCounterIn(ifIdProgramCounter), 
 		.instruction(ifIdInstruction), 
 		.writeRegister(memWbRd), 
-		//.writeData(), 
+		.writeData(memWbRegisterData), 
 		.regWrite(memWbRegWrite), 
 		.clk(clk), 
 		.writeBackControl(idExWriteBackControl), 
@@ -80,7 +82,7 @@ module Microprocessor(
 		.rdIn(idExRd), 
 		.memWbRegWrite(memWbRegWrite), 
 		.memWbRd(memWbRd), 
-		//.memWbData(), 
+		.memWbData(memWbRegisterData), 
 		.clk(clk), 
 		.writeBackControlOut(exMemWriteBackControl), 
 		.memAccessControlOut(exMemMemAccessControl), 
@@ -100,6 +102,13 @@ module Microprocessor(
 		.readData(memWbReadData), 
 		.resultOut(memWbResult), 
 		.rdOut(memWbRd)
+	);
+	
+	WriteBack writeBack (
+		.writeBackControl(memWbWriteBackControl), 
+		.readData(memWbReadData), 
+		.result(memWbResult), 
+		.writeData(memWbRegisterData)
 	);
 
 endmodule
