@@ -27,7 +27,7 @@ module InstructionDecodeTest;
 
 	// Outputs
 	wire [1:0] writeBackControl;
-	wire [2:0] memAccessControl;
+	wire [1:0] memAccessControl;
 	wire [3:0] calculationControl;
 	wire [31:0] programCounterOut;
 	wire [31:0] readData1;

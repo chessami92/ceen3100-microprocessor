@@ -29,6 +29,8 @@ module InstructionFetch(
 	
 	initial begin
 		programCounter = 0;
+		programCounterOut = 0;
+		instruction = 0;
 	end
 	
 	always @(negedge clk) begin
