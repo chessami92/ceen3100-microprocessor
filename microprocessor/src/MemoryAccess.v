@@ -24,23 +24,26 @@ module MemoryAccess(
     output reg [4:0] rdOut
     );
 	
-	reg [31:0] memory [1023:0];
-	reg [31:0] readDataBuffer;
+	reg [31:0] memory [7:0];
+	wire [31:0] readDataBuffer;
 	wire memRead, memWrite;
 	
 	assign memRead = memAccessControl[1];
 	assign memWrite = memAccessControl[0];
 	
 	initial begin
-		memory[0] = 0;
-		memory[1] = 1;
-		memory[2] = 2;
+		memory[7] = 7;
+		memory[6] = 6;
+		memory[5] = 5;
+		memory[4] = 4;
 		memory[3] = 3;
+		memory[2] = 2;
+		memory[1] = 1;
+		memory[0] = 0;
 		writeBackControlOut = 0;
 		readData = 0;
 		resultOut = 0;
 		rdOut = 0;
-		readDataBuffer = 0;
 	end
 	
 	always @(negedge clk) begin
@@ -48,15 +51,10 @@ module MemoryAccess(
 		readData <= readDataBuffer;
 		resultOut <= resultIn;
 		if(memWrite == 1)
-			memory[resultIn] <= writeData; 
+			memory[resultIn] <= writeData;
 		rdOut <= rdIn; 
 	end
 	
-	always @(memRead, resultIn) begin
-		if(memRead == 1)
-			readDataBuffer = memory[resultIn];
-		else
-			readDataBuffer = 32'hxxxxxxxx;
-	end
+	assign readDataBuffer = (memRead ? memory[resultIn] : 32'hxxxxxxxx);
 	
 endmodule

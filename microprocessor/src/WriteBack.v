@@ -12,15 +12,11 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module WriteBack(
-    input [1:0] writeBackControl,
+    input memToReg,
     input [31:0] readData,
     input [31:0] result,
     output reg [31:0] writeData
     );
-	
-	wire memToReg;
-	
-	assign memToReg = writeBackControl[0];
 
 	always @(memToReg, readData, result) begin
 		case(memToReg)

@@ -105,7 +105,7 @@ module Microprocessor(
 	);
 	
 	WriteBack writeBack (
-		.writeBackControl(memWbWriteBackControl), 
+		.memToReg(memWbWriteBackControl[0]), 
 		.readData(memWbReadData), 
 		.result(memWbResult), 
 		.writeData(memWbRegisterData)

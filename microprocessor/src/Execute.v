@@ -103,7 +103,7 @@ module Execute(
 		if(regDst == 0)
 			rdOut <= rt;
 		else
-			rdOut <= rs;
+			rdOut <= rdIn;
 	end
 	
 endmodule

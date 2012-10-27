@@ -16,9 +16,9 @@
       <obj_property name="ObjectShortName">writeData[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/WriteBackTest/wbControl" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">wbControl[1:0]</obj_property>
-      <obj_property name="ObjectShortName">wbControl[1:0]</obj_property>
+   <wvobject fp_name="/WriteBackTest/memToReg" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">memToReg</obj_property>
+      <obj_property name="ObjectShortName">memToReg</obj_property>
    </wvobject>
    <wvobject fp_name="/WriteBackTest/readData" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">readData[31:0]</obj_property>

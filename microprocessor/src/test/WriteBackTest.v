@@ -25,7 +25,7 @@
 module WriteBackTest;
 
 	// Inputs
-	reg [1:0] writeBackControl;
+	reg memToReg;
 	reg [31:0] readData;
 	reg [31:0] result;
 
@@ -34,22 +34,22 @@ module WriteBackTest;
 
 	// Instantiate the Unit Under Test (UUT)
 	WriteBack uut (
-		.writeBackControl(writeBackControl), 
+		.memToReg(memToReg), 
 		.readData(readData), 
 		.result(result), 
 		.writeData(writeData)
 	);
 
 	initial begin
-		writeBackControl = 0;
+		memToReg = 0;
 		readData = 100;
 		result = 200;
 		
-		#5 writeBackControl = 1;
+		#5 memToReg = 1;
 		
-		#5 writeBackControl = 2;
+		#5 memToReg = 0;
 		
-		#5 writeBackControl = 2'bxx;
+		#5 memToReg = 1'bx;
 	end
       
 endmodule
