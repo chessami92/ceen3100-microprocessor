@@ -17,7 +17,7 @@ module InstructionDecode(
 	 input regWrite,
     input clk,
 	 output reg [1:0] writeBackControl,
-    output reg [2:0] memAccessControl,
+    output reg [1:0] memAccessControl,
     output reg [3:0] calculationControl,
 	 output reg [31:0] programCounterOut,
 	 output reg [31:0] readData1,
@@ -34,8 +34,7 @@ module InstructionDecode(
 	wire [5:0] currentOpCode;
 	wire [4:0] currentRs, currentRt, currentRd;
 	wire [31:0] readData1Buffer, readData2Buffer;
-	wire [1:0] writeBackControlBuffer;
-	wire [2:0] memAccessControlBuffer;
+	wire [1:0] writeBackControlBuffer, memAccessControlBuffer;
 	wire [3:0] calculationControlBuffer;
 	
 	assign signExtendedImmediateValue = {{16{instruction[15]}}, instruction[15:0]};
@@ -74,7 +73,7 @@ module InstructionDecode(
 	
 	initial begin
 		writeBackControl = 2'b0;
-		memAccessControl = 3'b0;
+		memAccessControl = 2'b0;
 		calculationControl = 4'b0;
 		programCounterOut = 32'b0;
 		readData1 = 32'b0;
@@ -88,7 +87,7 @@ module InstructionDecode(
 	always @(negedge clk) begin
 			if(hazardDetection.bubbleInstruction == 1) begin
 				writeBackControl <= 2'b0;
-				memAccessControl <= 3'b0;
+				memAccessControl <= 2'b0;
 				calculationControl <= 4'b0;
 			end
 			else begin

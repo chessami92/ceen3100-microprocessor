@@ -13,7 +13,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Execute(
     input [1:0] writeBackControlIn,
-    input [2:0] memAccessControlIn,
+    input [1:0] memAccessControlIn,
     input [3:0] calculationControl,
     input [31:0] readData1,
     input [31:0] readData2,
@@ -26,7 +26,7 @@ module Execute(
     input [31:0] memWbData,
 	 input clk,
     output reg [1:0] writeBackControlOut,
-    output reg [2:0] memAccessControlOut,
+    output reg [1:0] memAccessControlOut,
     output reg [31:0] result,
     output reg [31:0] writeData,
     output reg [4:0] rdOut
@@ -103,7 +103,7 @@ module Execute(
 		if(regDst == 0)
 			rdOut <= rt;
 		else
-			rdOut <= rs;
+			rdOut <= rdIn;
 	end
 	
 endmodule

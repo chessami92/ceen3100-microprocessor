@@ -26,7 +26,7 @@ module ExecuteTest;
 
 	// Inputs
 	reg [1:0] writeBackControlIn;
-	reg [2:0] memAccessControlIn;
+	reg [1:0] memAccessControlIn;
 	reg [3:0] calculationControl;
 	reg [31:0] readData1;
 	reg [31:0] readData2;
@@ -41,7 +41,7 @@ module ExecuteTest;
 
 	// Outputs
 	wire [1:0] writeBackControlOut;
-	wire [2:0] memAccessControlOut;
+	wire [1:0] memAccessControlOut;
 	wire [31:0] result;
 	wire [31:0] writeData;
 	wire [4:0] rdOut;
