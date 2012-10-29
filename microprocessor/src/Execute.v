@@ -66,11 +66,6 @@ module Execute(
 		operand1 = 0;
 		readData2Forwarded = 0;
 		operand2 = 0;
-		writeBackControlOut = 0;
-		memAccessControlOut = 0;
-		result = 0;
-		writeData = 0;
-		rdOut = 0;
 	end
 	
 	always @(*) begin

@@ -20,8 +20,8 @@ module HazardDetection(
     );
 	
 	initial begin
-		pcWrite = 0;
-		ifIdWrite = 0;
+		pcWrite = 1;
+		ifIdWrite = 1;
 		bubbleInstruction = 0;
 	end
 	

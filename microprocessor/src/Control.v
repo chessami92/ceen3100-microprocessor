@@ -24,12 +24,6 @@ module Control(
 	assign memAccessControl = {memRead, memWrite};
 	assign calculationControl = {regDst, aluOp1, aluOp0, aluSrc};
 	
-	initial begin
-		regWrite = 0; memToReg = 0;
-		memRead = 0; memWrite = 0;
-		regDst = 0; aluOp1 = 0; aluOp0 = 0; aluSrc = 0;
-	end
-	
 	always @(opCode) begin
 		case(opCode)
 			'b000000 : begin //R format
