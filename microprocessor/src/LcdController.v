@@ -16,6 +16,7 @@ module LcdController(
     input [4:0] location,
     input [7:0] data,
 	 input clk,
+	 output wire [7:0] readData,
     output reg [11:8] SF_D, 
     output reg LCD_E,
     output reg LCD_RS,
@@ -37,6 +38,8 @@ module LcdController(
 	
 	reg [19:0] delay; 
 	reg [3:0] state;
+	
+	assign readData = characters[location];
 	
 	initial begin
 		LCD_E = 0;
@@ -66,7 +69,10 @@ module LcdController(
 	end
 	
 	always @(posedge clk) begin
-		characters[sendAddress] <= 7'h30 + sendAddress;
+		if(writeEnable == 1) begin
+			characters[location] <= data;
+			updateFlag[location] <= 1;
+		end
 		
 		if(pulseLcdE == 1) begin
 			if(pulseLcdEAck == 0) begin
@@ -165,7 +171,7 @@ module LcdController(
 			else if(displayOn == 1) begin
 				LCD_RS = 0;
 				LCD_RW = 0;
-				sendData <= 8'b0000_1100;
+				sendData <= 8'b0000_1111;
 				sendEnable <= 1;
 				
 				displayOn <= 0;
@@ -193,38 +199,31 @@ module LcdController(
 			//Write characters to screen
 			else begin
 				case(state)
+					//Set address
 					S0: begin
 						LCD_RS = 0;
 						LCD_RW = 0;
-						if(sendAddress == 0)
-							sendData <= 8'b1000_0000;
-						else if(sendAddress == 16)
-							sendData <= 8'b1010_1000;
 						
-						sendEnable <= 1;
+						sendAddress <= sendAddress + 1;
+						if(sendAddress < 16)
+							sendData <= {8'b1000, sendAddress[3:0]};
+						else
+							sendData <= {8'b1100, sendAddress[3:0]};
 						
-						state <= S1;
+						if(updateFlag[sendAddress] == 1) begin
+							sendEnable <= 1;
+							state <= S1;
+						end
+						updateFlag[sendAddress] <= 0;
 					end
+					//Write character
 					S1: begin
 						LCD_RS = 1;
 						LCD_RW = 0;
-						sendData <= characters[sendAddress];
+						sendData <= characters[sendAddress - 1];
+						sendEnable <= 1;
 						
-						if(updateFlag[sendAddress] == 0) begin
-							sendEnable <= 1;
-							//updateFlag[sendAddress] <= 1;
-						end
-						else begin
-							sendEnable <= 0;
-						end
-						
-						sendAddress <= sendAddress + 1;
-						if(sendAddress == 15 | sendAddress == 31)
-							state <= S0;
-						
-						//TEMPORARY FIX
-						if(sendAddress == 31)
-							updateFlag = 32'hFFFFFFFF;
+						state <= S0;
 					end
 					default: state <= S0;
 				endcase

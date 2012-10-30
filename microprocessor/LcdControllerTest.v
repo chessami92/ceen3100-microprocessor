@@ -31,6 +31,7 @@ module LcdControllerTest;
 	reg clk;
 
 	// Outputs
+	wire [7:0] readData;
 	wire [11:8] SF_D;
 	wire LCD_E;
 	wire LCD_RS;
@@ -42,6 +43,7 @@ module LcdControllerTest;
 		.location(location), 
 		.data(data), 
 		.clk(clk), 
+		.readData(readData),
 		.SF_D(SF_D), 
 		.LCD_E(LCD_E), 
 		.LCD_RS(LCD_RS), 
