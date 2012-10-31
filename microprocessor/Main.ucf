@@ -1,7 +1,9 @@
 # ==== Clock Source ====
 NET "clk" LOC = "C9" | IOSTANDARD = LVCMOS33;
 NET "clk" PERIOD = 20ns HIGH 40%;
-
+# ==== Push Buttons (button) ====
+NET "rst"  LOC = "D18" | IOSTANDARD = LVTTL | PULLDOWN ; #West
+# ==== LCD controls ====
 NET "LCD_E" LOC = "M18" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
 NET "LCD_RS" LOC = "L18" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
 NET "LCD_RW" LOC = "L17" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
@@ -10,3 +12,7 @@ NET "SF_D<8>" LOC = "R15" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
 NET "SF_D<9>" LOC = "R16" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
 NET "SF_D<10>" LOC = "P17" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
 NET "SF_D<11>" LOC = "M15" | IOSTANDARD = LVCMOS33 | DRIVE = 4 | SLEW = SLOW ;
+# ==== Rotary Push Button ====
+NET "rotA" LOC = "K18" | IOSTANDARD = LVTTL | PULLUP ;
+NET "rotB" LOC = "G18" | IOSTANDARD = LVTTL | PULLUP ;
+NET "rotCenter" LOC = "V16" | IOSTANDARD = LVTTL | PULLDOWN ;

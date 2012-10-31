@@ -34,7 +34,7 @@ module LcdController(
 	reg pulseLcdE, pulseLcdEAck;
 	reg [3:0] pulseLcdDelay;
 	
-	reg sendEnable, upperNibble, initialize, functionSet, entryModeSet, displayOn, clearDisplay;
+	reg sendEnable, upperNibble, initialize, functionSet, entryModeSet, displayOn, clearDisplay, cursorLeft;
 	
 	reg [19:0] delay; 
 	reg [3:0] state;
@@ -62,6 +62,7 @@ module LcdController(
 		entryModeSet = 0;
 		displayOn = 0;
 		clearDisplay = 0;
+		cursorLeft = 0;
 		
 		state = S0;
 		//Wait to initialize display
@@ -196,6 +197,14 @@ module LcdController(
 					end
 				endcase
 			end
+			else if(cursorLeft == 1) begin
+				LCD_RS = 0;
+				LCD_RW = 0;
+				sendData <= 8'b0001_0000;
+				sendEnable <= 1;
+				
+				cursorLeft <= 0;
+			end
 			//Write characters to screen
 			else begin
 				case(state)
@@ -214,6 +223,8 @@ module LcdController(
 							sendEnable <= 1;
 							state <= S1;
 						end
+						else
+							LCD_RW = 1;
 						updateFlag[sendAddress] <= 0;
 					end
 					//Write character
