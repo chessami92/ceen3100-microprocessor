@@ -27,11 +27,7 @@ module Alu(
 			SUB, SLT: result = operand1 - operand2;
 			AND: result = operand1 & operand2;
 			OR:  result = operand1 | operand2;
-<<<<<<< Updated upstream
 			default: result = 32'hxxxxxxxx;
-=======
-			default: result = 0;
->>>>>>> Stashed changes
 		endcase
 		
 		//Assign only the sign bit for SLT calculation
