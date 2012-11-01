@@ -156,7 +156,7 @@ module LcdController(
 			else if(functionSet == 1) begin
 				LCD_RS = 0;
 				LCD_RW = 0;
-				sendData <= 8'h28;
+				sendData <= 8'b0010_10xx;
 				sendEnable <= 1;
 				
 				functionSet <= 0;
@@ -172,7 +172,7 @@ module LcdController(
 			else if(displayOn == 1) begin
 				LCD_RS = 0;
 				LCD_RW = 0;
-				sendData <= 8'b0000_1111;
+				sendData <= 8'b0000_1100;
 				sendEnable <= 1;
 				
 				displayOn <= 0;
@@ -200,7 +200,7 @@ module LcdController(
 			else if(cursorLeft == 1) begin
 				LCD_RS = 0;
 				LCD_RW = 0;
-				sendData <= 8'b0001_0000;
+				sendData <= 8'b0001_00xx;
 				sendEnable <= 1;
 				
 				cursorLeft <= 0;

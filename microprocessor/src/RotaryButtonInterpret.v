@@ -32,9 +32,9 @@ module RotaryButtonInterpret(
 	reg [8:0] debounce; 
 	
 	initial begin
-		rotaryQ1 = 0;
+		rotaryQ1 = 1;
 		rotaryQ2 = 0;
-		rotaryQ1Delay = 0;
+		rotaryQ1Delay = 1;
 		debounce = 0;
 	end
 	
