@@ -24,7 +24,7 @@ module LcdController(
     );
 	
 	parameter CLEAR_DISPLAY = 8'b1;
-	parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3, S4 = 4, SDone = 7;
+	parameter S0 = 3'b000, S1 = 3'b001, S2 = 3'b010, S3 = 3'b011, S4 = 3'b100, SDone = 3'b111;
 	
 	reg [7:0] characters[31:0];
 	reg [31:0] updateFlag;
@@ -37,7 +37,7 @@ module LcdController(
 	reg sendEnable, upperNibble, initialize, functionSet, entryModeSet, displayOn, clearDisplay, cursorLeft;
 	
 	reg [19:0] delay; 
-	reg [3:0] state;
+	reg [2:0] state;
 	
 	assign readData = characters[location];
 	
