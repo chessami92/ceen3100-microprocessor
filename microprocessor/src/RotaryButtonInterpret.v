@@ -28,7 +28,7 @@ module RotaryButtonInterpret(
     output reg down
     );
 	
-	reg rotaryQ1, rotaryQ2, rotaryQ1Delay;
+	reg rotaryQ1, rotaryQ2, rotaryQ1Delay, downAck;
 	reg [8:0] debounce; 
 	
 	initial begin
@@ -68,10 +68,10 @@ module RotaryButtonInterpret(
 			end
 			else if(rotaryQ2 == 0) begin
 				left <= 1;
-				right <= 0;
+				right<= 0;
 			end
 		end
-		else if(rotaryQ1 == 0) begin
+		else begin //if(rotaryQ1 == 0) begin
 			left <= 0;
 			right <= 0;
 		end
@@ -80,11 +80,15 @@ module RotaryButtonInterpret(
 		if(rotCenter == 0) begin
 			debounce <= 0;
 			down <= 0;
+			downAck <= 0;
 		end
-		else 
-			debounce <= debounce + 1;
-			
-		if(debounce == 9'hFFF) 
+		else if(debounce == 9'hFFF && downAck == 0) begin
 			down <= 1;
+			downAck <= 1;
+		end
+		else if(downAck == 1)
+			down <= 0;
+		else
+			debounce <= debounce + 1;
 	end
 endmodule

@@ -63,7 +63,7 @@ module RotaryButtonInterpretTest;
 		#3000 rotA = 0;
 		
 		#3000 rotCenter = 1; //Down Press
-		#25000 rotCenter = 0;
+		#250000 rotCenter = 0;
 	end
 	
 	always begin
