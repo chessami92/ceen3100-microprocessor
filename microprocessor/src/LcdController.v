@@ -27,7 +27,6 @@ module LcdController(
 	parameter S0 = 3'b000, S1 = 3'b001, S2 = 3'b010, S3 = 3'b011, S4 = 3'b100, SDone = 3'b111;
 	
 	reg [7:0] characters[31:0];
-	reg [31:0] updateFlag;
 	reg [4:0] sendAddress;
 	reg [7:0] sendData;
 	
@@ -47,7 +46,6 @@ module LcdController(
 		LCD_RS = 0;
 		LCD_RW = 0;
 		
-		updateFlag = 0;
 		sendAddress = 0;
 		sendData = 0;
 		
@@ -70,10 +68,8 @@ module LcdController(
 	end
 	
 	always @(posedge clk) begin
-		if(writeEnable == 1) begin
+		if(writeEnable == 1)
 			characters[location] <= data;
-			updateFlag[location] <= 1;
-		end
 		
 		if(pulseLcdE == 1) begin
 			if(pulseLcdEAck == 0) begin
@@ -214,24 +210,26 @@ module LcdController(
 						LCD_RW = 0;
 						
 						sendAddress <= sendAddress + 1;
+						
 						if(sendAddress < 16)
 							sendData <= {8'b1000, sendAddress[3:0]};
 						else
 							sendData <= {8'b1100, sendAddress[3:0]};
 						
-						if(updateFlag[sendAddress] == 1) begin
-							sendEnable <= 1;
-							state <= S1;
-						end
-						else
-							LCD_RW = 1;
-						updateFlag[sendAddress] <= 0;
+						sendEnable <= 1;
+						state <= S1;
+						
+						if(sendAddress == 0)
+							delay <= 50000000; //100ms delay
 					end
 					//Write character
 					S1: begin
 						LCD_RS = 1;
 						LCD_RW = 0;
-						sendData <= characters[sendAddress - 1];
+						if(characters[sendAddress - 1] == 0)
+							sendData <= 8'h20;
+						else
+							sendData <= characters[sendAddress - 1];
 						sendEnable <= 1;
 						
 						state <= S0;
