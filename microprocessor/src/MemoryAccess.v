@@ -40,10 +40,6 @@ module MemoryAccess(
 		memory[2] = 2;
 		memory[1] = 1;
 		memory[0] = 0;
-		writeBackControlOut = 0;
-		readData = 0;
-		resultOut = 0;
-		rdOut = 0;
 	end
 	
 	always @(negedge clk) begin

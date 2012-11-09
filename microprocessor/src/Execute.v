@@ -33,12 +33,14 @@ module Execute(
     );
 	
 	parameter exMemForwardData = 2'b10, memWbForwardData = 2'b01, nominalOperand = 2'b00;
+	parameter ADD = 6'b000000, SUB = 6'b000001;
 	
 	wire aluSrc, regDst;
 	wire [1:0] aluOp;
 	wire [1:0] operand1Control, operand2Control;
 	wire [31:0] resultBuffer;
 	reg [31:0] operand1, readData2Forwarded, operand2;
+	reg [5:0] aluOpCode;
 	
 	assign regDst = calculationControl[3];
 	assign aluSrc = calculationControl[0];
@@ -47,7 +49,7 @@ module Execute(
 	Alu alu (
 		.operand1(operand1), 
 		.operand2(operand2), 
-		.opCode(immediateOperand[5:0]), 
+		.opCode(aluOpCode), 
 		.result(resultBuffer)
 	);
 	
@@ -66,11 +68,6 @@ module Execute(
 		operand1 = 0;
 		readData2Forwarded = 0;
 		operand2 = 0;
-		writeBackControlOut = 0;
-		memAccessControlOut = 0;
-		result = 0;
-		writeData = 0;
-		rdOut = 0;
 	end
 	
 	always @(*) begin
@@ -81,6 +78,12 @@ module Execute(
 			default: operand1 = 32'hxxxxxxxx;
 		endcase
 		
+		if(aluOp == 2'b10) //Register operations
+			aluOpCode = immediateOperand[5:0];
+		else if(aluOp == 2'b00) //Memory operations
+			aluOpCode = ADD;
+		else
+			aluOpCode = 6'bxxxxxx;
 		
 		case(operand2Control)
 			nominalOperand: readData2Forwarded = readData2;

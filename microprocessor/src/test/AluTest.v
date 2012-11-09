@@ -32,7 +32,7 @@ module AluTest;
 	// Outputs
 	wire [31:0] result;
 
-	parameter ADD = 6'b000000, SUB = 6'b000001, AND = 6'b000010, OR = 6'b000011, XOR = 6'b000100;
+	parameter ADD = 6'b000000, SUB = 6'b000001, AND = 6'b000010, OR = 6'b000011, SLT= 6'b000100;
 
 	// Instantiate the Unit Under Test (UUT)
 	Alu uut (
@@ -50,7 +50,22 @@ module AluTest;
 		#5 opCode = SUB;
 		#5 opCode = AND;
 		#5 opCode = OR;
-		#5 opCode = XOR;
+		
+		#5 operand1 = 5;
+		operand2 = 5;
+		opCode = SUB;
+		
+		#5 opCode = SLT;
+		operand1 = 2;
+		operand2 = 3;
+		
+		#5 operand1 = 3;
+		operand2 = 2;
+		
+		#5 operand2 = 3;
+		
+		#5 operand1 = -3;
+		operand2= 3;
 	end
       
 endmodule
