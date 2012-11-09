@@ -10,42 +10,45 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="8" />
    <wvobject fp_name="/AluTest/result" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">result[31:0]</obj_property>
       <obj_property name="ObjectShortName">result[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/AluTest/operand1" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">operand1[31:0]</obj_property>
       <obj_property name="ObjectShortName">operand1[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/AluTest/operand2" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">operand2[31:0]</obj_property>
       <obj_property name="ObjectShortName">operand2[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/AluTest/opCode" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">opCode[5:0]</obj_property>
       <obj_property name="ObjectShortName">opCode[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/AluTest/ADD" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">ADD[5:0]</obj_property>
       <obj_property name="ObjectShortName">ADD[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/AluTest/SUB" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">SUB[5:0]</obj_property>
       <obj_property name="ObjectShortName">SUB[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/AluTest/AND" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">AND[5:0]</obj_property>
       <obj_property name="ObjectShortName">AND[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/AluTest/OR" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">OR[5:0]</obj_property>
       <obj_property name="ObjectShortName">OR[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/AluTest/XOR" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">XOR[5:0]</obj_property>
-      <obj_property name="ObjectShortName">XOR[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

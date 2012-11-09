@@ -3,19 +3,12 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    23:42:14 10/09/2012 
+// Create Date:    	23:42:14 10/09/2012 
 // Design Name: 
-// Module Name:    ForwardingUnit 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
+// Module Name:    	ForwardingUnit 
+// Project Name: 		microprocessor
 //
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
+// Dependencies: 		None
 //
 //////////////////////////////////////////////////////////////////////////////////
 module ForwardingUnit(
