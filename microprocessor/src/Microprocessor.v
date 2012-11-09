@@ -38,7 +38,7 @@ module Microprocessor(
 	wire [31:0] memWbReadData, memWbResult, memWbRegisterData;
 	wire [4:0] memWbRd;
 	
-	assign led = idExReadData1[7:0];
+	assign led = exMemResult[7:0];
 	assign memWbRegWrite = memWbWriteBackControl[1];
 	
 	InstructionFetch instructionFetch (
