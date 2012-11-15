@@ -16,7 +16,7 @@ module MemoryAccess(
     input [1:0] memAccessControl,
     input [31:0] resultIn,
     input [31:0] writeData,
-	 input [4:0] rdIn,
+    input [4:0] rdIn,
     input clk,
     output reg [1:0] writeBackControlOut,
     output reg [31:0] readData,
@@ -24,22 +24,21 @@ module MemoryAccess(
     output reg [4:0] rdOut
     );
 	
-	reg [31:0] memory [7:0];
+	reg [31:0] memory [31:0];
 	wire [31:0] readDataBuffer;
 	wire memRead, memWrite;
 	
 	assign memRead = memAccessControl[1];
 	assign memWrite = memAccessControl[0];
 	
+	integer i;
+	
 	initial begin
-		memory[7] = 7;
-		memory[6] = 6;
-		memory[5] = 5;
-		memory[4] = 4;
-		memory[3] = 3;
-		memory[2] = 2;
-		memory[1] = 1;
-		memory[0] = 0;
+		for(i = 0; i < 20; i = i + 1) 
+			memory[i] = i;
+		memory[20] = 1;
+		memory[21] = 2;
+		memory[22] = 5;
 	end
 	
 	always @(negedge clk) begin

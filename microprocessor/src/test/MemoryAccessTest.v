@@ -73,6 +73,4 @@ module MemoryAccessTest;
 	always begin
 		#20 clk = ~clk;
 	end
-      
 endmodule
-

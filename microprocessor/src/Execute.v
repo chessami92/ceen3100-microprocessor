@@ -22,7 +22,7 @@ module Execute(
     input [4:0] rt,
     input [4:0] rdIn,
     input memWbRegWrite,
-	 input [4:0] memWbRd,
+    input [4:0] memWbRd,
     input [31:0] memWbData,
 	 input clk,
     output reg [1:0] writeBackControlOut,
@@ -108,5 +108,4 @@ module Execute(
 		else
 			rdOut <= rdIn;
 	end
-	
 endmodule

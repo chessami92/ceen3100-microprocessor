@@ -117,6 +117,4 @@ module ExecuteTest;
 	always begin
 		#5 clk = ~clk;
 	end
-      
 endmodule
-

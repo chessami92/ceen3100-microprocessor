@@ -22,9 +22,9 @@ module Main(
 	wire right, left, down;
 	
 	wire [63:0] displayName;
-	reg [63:0] displayValue;
+	wire [63:0] displayValue;
 	
-	assign displayName = 64'h52313A2052323A20;
+	assign displayName = 64'h50433A20414C553A;
 	
 	RegisterDisplay registerDisplay (
 		.displayNameBus(displayName),

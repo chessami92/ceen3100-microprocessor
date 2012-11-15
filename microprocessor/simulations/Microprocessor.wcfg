@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Joshua/Desktop/microprocessor/microprocessor/MicroprocessorTest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="MicroprocessorTest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="6" />
+   <wvobject fp_name="/MicroprocessorTest/programCounter" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">programCounter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">programCounter[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MicroprocessorTest/aluResult" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">aluResult[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluResult[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MicroprocessorTest/r2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r2[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MicroprocessorTest/r3" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r3[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MicroprocessorTest/r4" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r4[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r4[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MicroprocessorTest/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+</wave_config>

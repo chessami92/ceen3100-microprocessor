@@ -28,20 +28,28 @@ module MicroprocessorTest;
 	reg clk;
 
 	// Outputs
-	wire [7:0] led;
+	wire [31:0] programCounter;
+	wire [31:0] aluResult;
+	wire [31:0] r2;
+	wire [31:0] r3;
+	wire [31:0] r4;
 
 	// Instantiate the Unit Under Test (UUT)
 	Microprocessor uut (
-		.clk(clk), 
-		.led(led)
+		.clk, 
+		.programCounter,
+		.aluResult,
+		.r2,
+		.r3,
+		.r4
 	);
 
 	initial begin
-		clk = 0;
+		clk = 1;
 	end
 	
 	always begin
-		#20 clk = ~clk;
+		#10 clk = ~clk;
 	end
       
 endmodule
