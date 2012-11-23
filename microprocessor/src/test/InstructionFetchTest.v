@@ -27,6 +27,8 @@ module InstructionFetchTest;
 	// Inputs
 	reg pcWrite;
 	reg ifIdWrite;
+	reg branch;
+	reg [31:0] branchProgramCounter;
 	reg clk;
 
 	// Outputs
@@ -37,16 +39,26 @@ module InstructionFetchTest;
 	InstructionFetch uut (
 		.pcWrite(pcWrite), 
 		.ifIdWrite(ifIdWrite), 
+		.branch(branch),
+		.branchProgramCounter(branchProgramCounter),
 		.clk(clk), 
 		.programCounterOut(programCounterOut), 
 		.instruction(instruction)
 	);
 
 	initial begin
-		// Initialize Inputs
 		pcWrite = 1;
 		ifIdWrite = 1;
-		clk = 0;
+		branch = 0;
+		branchProgramCounter = 0;
+		clk = 1;
+		
+		//Branch occurred
+		#6 branch = 1;
+		branchProgramCounter = 48;
+		
+		//Normal incrementing
+		#10 branch = 0;
 	end
 	
 	always begin

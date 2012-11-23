@@ -15,11 +15,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 module Microprocessor(
     input clk,
-    output [7:0] led
+    output wire [31:0] programCounter,
+    output wire [31:0] aluResult,
+    output wire [31:0] r2,
+    output wire [31:0] r3,
+    output wire [31:0] r4
     );
 	
 	//Control signals that are not in a buffer
-	wire pcWrite, ifIdWrite;
+	wire pcWrite, ifIdWrite, branch;
+	wire [31:0] branchProgramCounter;
 	
 	//Buffered signals
 	wire [31:0] ifIdProgramCounter, ifIdInstruction;
@@ -38,12 +43,20 @@ module Microprocessor(
 	wire [31:0] memWbReadData, memWbResult, memWbRegisterData;
 	wire [4:0] memWbRd;
 	
-	assign led = exMemResult[7:0];
 	assign memWbRegWrite = memWbWriteBackControl[1];
+	
+	//Only for output purposes
+	assign programCounter = instructionFetch.programCounter;
+	assign aluResult = exMemResult;
+	assign r2 = instructionDecode.registerFile.registers[2];
+	assign r3 = instructionDecode.registerFile.registers[3];
+	assign r4 = instructionDecode.registerFile.registers[4];
 	
 	InstructionFetch instructionFetch (
 		.pcWrite(pcWrite), 
 		.ifIdWrite(ifIdWrite), 
+		.branch(branch),
+		.branchProgramCounter(branchProgramCounter),
 		.clk(clk), 
 		.programCounterOut(ifIdProgramCounter), 
 		.instruction(ifIdInstruction)
@@ -67,7 +80,9 @@ module Microprocessor(
 		.rt(idExRt), 
 		.rd(idExRd), 
 		.pcWrite(pcWrite), 
-		.ifIdWrite(ifIdWrite)
+		.ifIdWrite(ifIdWrite),
+		.branch(branch),
+		.branchProgramCounter(branchProgramCounter)
 	);
 	
 	Execute execute (

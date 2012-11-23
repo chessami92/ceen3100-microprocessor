@@ -19,26 +19,30 @@ module ControlTest;
 
 	// Inputs
 	reg [5:0] opCode;
+	reg registerEqual;
 
 	// Outputs
 	wire [1:0] writeBackControl;
 	wire [1:0] memAccessControl;
 	wire [3:0] calculationControl;
+	wire branch;
 
 	// Instantiate the Unit Under Test (UUT)
 	Control uut (
 		.opCode,
+		.registerEqual,
 		.writeBackControl, 
 		.memAccessControl, 
-		.calculationControl
+		.calculationControl,
+		.branch
 	);
 
 	initial begin
-		opCode = 0;
-		#5 opCode = 1;
-		#5 opCode = 2;
-		#5 opCode = 3;
+		opCode = 0; //R-format
+		registerEqual = 0;
+		#5 opCode = 1; //Load Word
+		#5 opCode = 2; //Store Word
+		#5 opCode = 3; //Branch if equal
+		#5 registerEqual = 1;
 	end
-	
 endmodule
-

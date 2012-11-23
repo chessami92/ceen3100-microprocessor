@@ -3,14 +3,14 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/Users/Joshua/Google Drive/CEEN 3100/microprocessor/microprocessor/InstructionFetchTest_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="C:/Users/Joshua/Desktop/microprocessor/microprocessor/InstructionFetchTest_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="InstructionFetchTest" />
             <top_module name="glbl" />
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="5" />
+   <WVObjectSize size="7" />
    <wvobject fp_name="/InstructionFetchTest/programCounterOut" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">programCounterOut[31:0]</obj_property>
       <obj_property name="ObjectShortName">programCounterOut[31:0]</obj_property>
@@ -28,6 +28,15 @@
    <wvobject fp_name="/InstructionFetchTest/ifIdWrite" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">ifIdWrite</obj_property>
       <obj_property name="ObjectShortName">ifIdWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionFetchTest/branch" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">branch</obj_property>
+      <obj_property name="ObjectShortName">branch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/InstructionFetchTest/branchProgramCounter" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">branchProgramCounter[31:0]</obj_property>
+      <obj_property name="ObjectShortName">branchProgramCounter[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/InstructionFetchTest/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>

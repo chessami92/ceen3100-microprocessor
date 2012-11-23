@@ -65,6 +65,4 @@ module ForwardingUnitTest;
 		#5 exMemRegWrite = 0;
 		memWbRegWrite = 0;
 	end
-      
 endmodule
-

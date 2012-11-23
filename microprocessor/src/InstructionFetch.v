@@ -14,6 +14,8 @@
 module InstructionFetch(
     input pcWrite,
     input ifIdWrite,
+	 input branch,
+	 input [31:0] branchProgramCounter,
     input clk,
     output reg [31:0] programCounterOut,
     output reg [31:0] instruction
@@ -33,11 +35,13 @@ module InstructionFetch(
 	
 	always @(negedge clk) begin
 		if(pcWrite == 1)
-			programCounter <= programCounter + 4;
+			if(branch == 1)
+				programCounter = branchProgramCounter;
+			else
+				programCounter = programCounter + 4;
 		if(ifIdWrite == 1) begin
 			programCounterOut <= programCounter; 
 			instruction <= instructionBuffer;
 		end
 	end
-	
 endmodule

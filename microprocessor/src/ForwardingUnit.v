@@ -39,5 +39,4 @@ module ForwardingUnit(
 		else
 			operand2Control = nominalOperand;
 	end
-
 endmodule
