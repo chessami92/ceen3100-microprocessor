@@ -67,6 +67,4 @@ module AluTest;
 		#5 operand1 = -3;
 		operand2= 3;
 	end
-      
 endmodule
-

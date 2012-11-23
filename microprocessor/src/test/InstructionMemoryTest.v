@@ -44,6 +44,7 @@ module InstructionMemoryTest;
 		#5 address = 8;
 		#5 address = 12;
 		#5 address = 16;
+		#5 address = 48;
 		#5 address = 0;
 	end
       

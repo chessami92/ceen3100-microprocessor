@@ -38,6 +38,8 @@ module InstructionDecodeTest;
 	wire [4:0] rd;
 	wire pcWrite;
 	wire ifIdWrite;
+	wire branch;
+	wire [31:0] branchProgramCounter;
 
 	// Instantiate the Unit Under Test (UUT)
 	InstructionDecode uut (
@@ -58,27 +60,36 @@ module InstructionDecodeTest;
 		.rt, 
 		.rd, 
 		.pcWrite, 
-		.ifIdWrite
-	);
+		.ifIdWrite,
+		.branch,
+		.branchProgramCounter
+		);
 
 	initial begin
 		// Initialize Inputs
 		clk = 0;
 		programCounterIn = 0;
 		
-		//Stimuli
+		//ADD R2, R0, R1
 		instruction = 32'b000000_00000_00001_00010_00000_000000;
-		writeRegister = 0;
+		writeRegister = 1;
 		writeData = 32'hFFFF_FFFF;
 		regWrite = 1;
 		
-		#7.5 writeRegister = 1;
+		#1 writeRegister = 1;
 		
+		//BEQ R0, R31, 10
+		#10 instruction = 32'b000011_00000_11111_0000000000001010;
+		
+		//BEQ R0, R31, 10
+		#10 instruction = 32'b000011_00000_11111_0000000000001010;
+		
+		//ADD R3, R3, R1
+		#10 instruction = 32'b000000_00011_00001_00011_00000_000000;
 	end
 	
 	always begin
 		#5 clk=~clk;
 	end
-      
 endmodule
 

@@ -11,11 +11,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 module RegisterFile(
     input [4:0] readRegister1, 
-	 input [4:0] readRegister2, 
-	 input [4:0] writeRegister,
+    input [4:0] readRegister2, 
+    input [4:0] writeRegister,
     input [31:0] writeData, 
-	 input regWrite, 
-	 input clk,
+    input regWrite, 
+    input clk,
     output wire [31:0] readData1, 
     output wire [31:0] readData2
     );
@@ -25,8 +25,9 @@ module RegisterFile(
 	integer i;
 	
 	initial begin
-		for(i = 0; i < 32; i = i + 1)
+		for(i = 0; i < 31; i = i + 1)
 			registers[i] = i;
+		registers[31] = 0;
 	end
 	
 	always @(posedge clk) begin

@@ -53,6 +53,4 @@ module HazardDetectionTest;
 		
 		#5 ifIdRs = 1;
 	end
-      
 endmodule
-
