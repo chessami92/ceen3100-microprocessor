@@ -14,7 +14,9 @@ module InstructionDecode(
     input [31:0] instruction,
     input [4:0] writeRegister,
     input [31:0] writeData,
+    input [4:0] exMemRd,
     input regWrite,
+    input exMemRegWrite,
     input clk,
     output reg [1:0] writeBackControl,
     output reg [1:0] memAccessControl,
@@ -77,9 +79,14 @@ module InstructionDecode(
 	
 	HazardDetection hazardDetection (
 		.idExMemRead(memAccessControl[1]), 
+		.idExRegWrite(writeBackControl[1]),
+		.exMemRegWrite(exMemRegWrite),
 		.idExRt(rt), 
+		.idExRd(rd),
 		.ifIdRs(currentRs), 
 		.ifIdRt(currentRt),
+		.exMemRd(exMemRd),
+		.opCode(currentOpCode),
 		.pcWrite(pcWrite), 
 		.ifIdWrite(ifIdWrite),
 		.bubbleInstruction(bubbleInstruction)

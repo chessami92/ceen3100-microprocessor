@@ -17,9 +17,11 @@ module Microprocessor(
     input clk,
     output wire [31:0] programCounter,
     output wire [31:0] aluResult,
+    output wire [31:0] r1,
     output wire [31:0] r2,
-    output wire [31:0] r3,
-    output wire [31:0] r4
+    output wire [31:0] r5,
+    output wire [31:0] r7,
+    output wire [31:0] mem25
     );
 	
 	//Control signals that are not in a buffer
@@ -48,9 +50,11 @@ module Microprocessor(
 	//Only for output purposes
 	assign programCounter = instructionFetch.programCounter;
 	assign aluResult = exMemResult;
+	assign r1 = instructionDecode.registerFile.registers[1];
 	assign r2 = instructionDecode.registerFile.registers[2];
-	assign r3 = instructionDecode.registerFile.registers[3];
-	assign r4 = instructionDecode.registerFile.registers[4];
+	assign r5 = instructionDecode.registerFile.registers[5];
+	assign r7 = instructionDecode.registerFile.registers[7];
+	assign mem25 = memoryAccess.memory[25];
 	
 	InstructionFetch instructionFetch (
 		.pcWrite(pcWrite), 
@@ -67,7 +71,9 @@ module Microprocessor(
 		.instruction(ifIdInstruction), 
 		.writeRegister(memWbRd), 
 		.writeData(memWbRegisterData), 
+		.exMemRd(exMemRd),
 		.regWrite(memWbRegWrite), 
+		.exMemRegWrite(exMemWriteBackControl[1]),
 		.clk(clk), 
 		.writeBackControl(idExWriteBackControl), 
 		.memAccessControl(idExMemAccessControl), 

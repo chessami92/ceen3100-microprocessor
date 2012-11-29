@@ -34,11 +34,8 @@ module MemoryAccess(
 	integer i;
 	
 	initial begin
-		for(i = 0; i < 20; i = i + 1) 
+		for(i = 20; i < 28; i = i + 1) 
 			memory[i] = i;
-		memory[20] = 1;
-		memory[21] = 2;
-		memory[22] = 5;
 	end
 	
 	always @(negedge clk) begin

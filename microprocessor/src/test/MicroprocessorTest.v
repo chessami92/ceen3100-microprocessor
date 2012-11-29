@@ -30,18 +30,22 @@ module MicroprocessorTest;
 	// Outputs
 	wire [31:0] programCounter;
 	wire [31:0] aluResult;
+	wire [31:0] r1;
 	wire [31:0] r2;
-	wire [31:0] r3;
-	wire [31:0] r4;
+	wire [31:0] r5;
+	wire [31:0] r7;
+	wire [31:0] mem25;
 
 	// Instantiate the Unit Under Test (UUT)
 	Microprocessor uut (
 		.clk, 
 		.programCounter,
 		.aluResult,
+		.r1,
 		.r2,
-		.r3,
-		.r4
+		.r5,
+		.r7,
+		.mem25
 	);
 
 	initial begin
