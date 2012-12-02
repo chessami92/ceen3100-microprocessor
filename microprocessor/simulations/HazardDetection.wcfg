@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/Joshua/Desktop/microprocessor/microprocessor/HazardDetectionTest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="HazardDetectionTest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/HazardDetectionTest/pcWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">pcWrite</obj_property>
+      <obj_property name="ObjectShortName">pcWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HazardDetectionTest/ifIdWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ifIdWrite</obj_property>
+      <obj_property name="ObjectShortName">ifIdWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HazardDetectionTest/bubbleInstruction" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">bubbleInstruction</obj_property>
+      <obj_property name="ObjectShortName">bubbleInstruction</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HazardDetectionTest/idExMemRead" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">idExMemRead</obj_property>
+      <obj_property name="ObjectShortName">idExMemRead</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HazardDetectionTest/idExRegWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">idExRegWrite</obj_property>
+      <obj_property name="ObjectShortName">idExRegWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HazardDetectionTest/exMemRegWrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">exMemRegWrite</obj_property>
+      <obj_property name="ObjectShortName">exMemRegWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HazardDetectionTest/idExRt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">idExRt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">idExRt[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HazardDetectionTest/idExRd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">idExRd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">idExRd[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HazardDetectionTest/ifIdRs" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ifIdRs[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ifIdRs[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HazardDetectionTest/ifIdRt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ifIdRt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">ifIdRt[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HazardDetectionTest/exMemRd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">exMemRd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">exMemRd[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/HazardDetectionTest/opCode" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">opCode[5:0]</obj_property>
+      <obj_property name="ObjectShortName">opCode[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

@@ -10,15 +10,20 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="8" />
    <wvobject fp_name="/MicroprocessorTest/programCounter" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">programCounter[31:0]</obj_property>
       <obj_property name="ObjectShortName">programCounter[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MicroprocessorTest/aluResult" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">aluResult[31:0]</obj_property>
       <obj_property name="ObjectShortName">aluResult[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MicroprocessorTest/r1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r1[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MicroprocessorTest/r2" type="array" db_ref_id="1">
@@ -26,14 +31,19 @@
       <obj_property name="ObjectShortName">r2[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MicroprocessorTest/r3" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">r3[31:0]</obj_property>
-      <obj_property name="ObjectShortName">r3[31:0]</obj_property>
+   <wvobject fp_name="/MicroprocessorTest/r5" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r5[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r5[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/MicroprocessorTest/r4" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">r4[31:0]</obj_property>
-      <obj_property name="ObjectShortName">r4[31:0]</obj_property>
+   <wvobject fp_name="/MicroprocessorTest/r7" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">r7[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r7[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/MicroprocessorTest/mem25" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mem25[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem25[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/MicroprocessorTest/clk" type="logic" db_ref_id="1">
